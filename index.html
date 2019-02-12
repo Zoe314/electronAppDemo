@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <!-- 会阻塞 https-->
+      <script src="https://csdnimg.cn/release/blog_editor_html/release1.3.7/ckeditor/plugins/chart/lib/chart.min.js"></script>
+      <script>window.$ = window.JQuery = require('./jquery-3.3.1.min.js');</script>
+      <style>
+          #box{width:100%;height: 200px;background: blue,border:2px solid #ccc;}
+          #child{background: pink;height: 170px;width: 170px;transition: 2s ease;}
+          #btn2{margin:20px;}
+          #child2{width: 180px;height: 150px;background:rgba(110,110,110,0.6);}
+      </style>
+  </head>
+  <body>
+    <div id="box">
+      <button id="btn2">点击改变</button>
+      <button id="btn3">点击改变child2</button>
+      <button id='btn' >点击发送node请求</button>
+      <div id="child">文章内容文字的显示与隐藏</div>
+      <div id="child2">移动div</div>
+    </div>      
+
+   <script src="renderer/index.js"></script>
+   <script type="text/javascript">
+      $("#btn2").click(function(){
+        // console.log($("#child"),$(this),111111)
+        // $("#child").animate({left:'25px',height:'150px',width:'150px'})；
+        $("#child").toggle();
+      }); 
+      $("#btn3").click(function(){
+        var div=$("#child2");
+        div.animate({left:'100px'},"slow");
+        div.animate({fontSize:'3em'},"slow");
+      });
+   </script>
+  </body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>loadfile</title>
+  </head>
+  <body>
+  <p>加载网络</p>
+  <button id="load">load</button>
+  <textarea id="text" style="width: 100%;height: 500px;background: #d9e8f0">
+  </textarea>
+  </body>
+<script>
+  var fs = require('fs');
+  var http = require('http');
+  var text = document.getElementById('text');
+  var load = document.getElementById('load');
+  load.addEventListener('click',function(){
+    loadSomeData();
+  });
+
+  function loadSomeData(){
+    http.get('http://www.baidu.com',function(res){
+      res.setEncoding('utf8');
+      res.on('data',function(chunk){
+        text.textContent += chunk;
+      });
+    });
+  }
+</script>
+</html> -->

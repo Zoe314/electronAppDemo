@@ -1,0 +1,19 @@
+{
+  "name": "electronapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "electron-packager . --platform=win32 --arch=ia32 --electron-version=1.4.15 --overwrite --ignore=node_modules --ignore=.gitignore"
+
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^4.0.4"
+  },
+  "dependencies": {
+    "node-inno": "^1.0.7"
+  }
+}
